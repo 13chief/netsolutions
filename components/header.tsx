@@ -30,25 +30,25 @@ export function Header() {
 
           <nav className="hidden gap-6 md:flex">
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               About
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Services
             </Link>
             <Link
-              href="#testimonials"
+              href="/#testimonials"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Testimonials
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Contact
@@ -56,7 +56,7 @@ export function Header() {
           </nav>
 
           <Button asChild>
-            <Link href="#contact">Book a Demo</Link>
+            <Link href="/#contact">Book a Demo</Link>
           </Button>
         </div>
       </div>
