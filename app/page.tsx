@@ -7,6 +7,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { HurricaneTrafficSection } from "@/components/hurricane-traffic-section"
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyChooseSection />
       <TrustedBySection />
       <TestimonialsSection />
+      <HurricaneTrafficSection />
       <ContactSection />
       <Footer />
     </main>
