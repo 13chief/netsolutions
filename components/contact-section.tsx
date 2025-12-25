@@ -8,18 +8,52 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export function ContactSection() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    if (isSubmitting) {
+      return
+    }
+
+    setIsSubmitting(true)
+    setErrorMessage(null)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null)
+        throw new Error(payload?.error || "We could not send your message. Please try again.")
+      }
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      })
+
+      router.push("/thank-you")
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "We could not send your message. Please try again.")
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -47,6 +81,7 @@ export function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -59,6 +94,7 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -71,12 +107,18 @@ export function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg">
-                    Send Message
+                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
+                  {errorMessage ? (
+                    <p className="text-sm text-destructive" role="alert">
+                      {errorMessage}
+                    </p>
+                  ) : null}
                 </form>
               </CardContent>
             </Card>
