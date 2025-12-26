@@ -7,9 +7,10 @@ export function AboutSection() {
             About Net<span className="text-primary">Solutions</span>
           </h2>
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-            NetSolutions is a Canadian technology partner specializing in AI and automation tools that help
-            organizations streamline operations, eliminate repetitive tasks, and boost productivity. We design
-            lightweight SaaS and custom automation systems tailored to real business challenges.
+            NetSolutions is a Canadian technology partner specializing in AI, automation, and modern web development.
+            We build conversion-ready websites, backend integrations, and database-backed systems that help
+            organizations streamline operations, eliminate repetitive tasks, and boost productivity. Our team delivers
+            lightweight SaaS and custom automation platforms tailored to real business challenges.
           </p>
         </div>
       </div>

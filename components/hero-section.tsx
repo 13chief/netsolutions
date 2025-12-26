@@ -41,13 +41,13 @@ export function HeroSection() {
           </div>
 
           {/* Decorative element */}
-          <div className="mt-16 lg:mt-24">
-            <div className="relative mx-auto max-w-5xl">
+          <div className="mt-10 lg:mt-14">
+            <div className="relative mx-auto max-w-2xl">
               <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
               <img
                 src="/modern-dashboard-workflow-automation-interface.jpg"
                 alt="Workflow Automation Dashboard"
-                className="w-full rounded-xl border border-border shadow-2xl"
+                className="mx-auto h-auto w-full rounded-lg border border-border shadow-lg"
               />
             </div>
           </div>

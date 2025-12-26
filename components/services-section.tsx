@@ -59,7 +59,8 @@ const services = [
       </svg>
     ),
     title: "Process Optimization Dashboards",
-    description: "Get real-time insights with custom dashboards that track KPIs and business metrics that matter.",
+    description:
+      "Get real-time insights with custom dashboards powered by clean backend integrations and database pipelines.",
   },
   {
     icon: (
@@ -78,8 +79,9 @@ const services = [
         />
       </svg>
     ),
-    title: "Custom SaaS Development",
-    description: "Build scalable, API-first SaaS solutions designed for your specific business needs and workflows.",
+    title: "Web & SaaS Development",
+    description:
+      "Launch conversion-focused websites and SaaS products with secure backend integrations and modern databases.",
   },
 ]
 

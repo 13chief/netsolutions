@@ -8,12 +8,14 @@ import { ContactSection } from "@/components/contact-section"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HurricaneTrafficSection } from "@/components/hurricane-traffic-section"
+import { WhoWeHelpSection } from "@/components/who-we-help-section"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <HeroSection />
+      <WhoWeHelpSection />
       <AboutSection />
       <ServicesSection />
       <WhyChooseSection />
